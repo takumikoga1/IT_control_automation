@@ -12,25 +12,23 @@ import (
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/iam"
+	// "github.com/aws/aws-sdk-go-v2/service/iam/types" // この行を削除しました
 	"github.com/aws/aws-sdk-go-v2/service/sts"
 	"github.com/joho/godotenv"
 )
 
 func main() {
-	// .env ファイルを読み込む
 	err := godotenv.Load()
 	if err != nil {
 		log.Printf("Warning: .env file not found.")
 	}
 
-	// 環境変数からプロファイル名のリストを取得
 	profilesStr := os.Getenv("AWS_PROFILES")
 	if profilesStr == "" {
 		log.Fatalf("Error: AWS_PROFILES is not set in .env file.")
 	}
 	profiles := strings.Split(profilesStr, ",")
 
-	// CSVファイルを準備
 	csvFileName := "iam_users_list.csv"
 	file, err := os.Create(csvFileName)
 	if err != nil {
@@ -41,15 +39,13 @@ func main() {
 	writer := csv.NewWriter(file)
 	defer writer.Flush()
 
-	// CSVヘッダーを書き込む
-	header := []string{"AccountID", "ProfileName", "UserName", "UserID", "Arn", "CreateDate"}
+	header := []string{"AccountID", "ProfileName", "UserName", "UserID", "Arn", "CreateDate", "Groups"}
 	if err := writer.Write(header); err != nil {
 		log.Fatalf("Failed to write header to CSV: %v", err)
 	}
 
-	log.Printf("Starting to fetch IAM users from %d accounts...", len(profiles))
+	log.Printf("Starting to fetch IAM users and groups from %d accounts...", len(profiles))
 
-	// 各プロファイルをループ処理
 	for _, profile := range profiles {
 		profile = strings.TrimSpace(profile)
 		if profile == "" {
@@ -58,7 +54,6 @@ func main() {
 
 		log.Printf("Processing profile: %s", profile)
 
-		// プロファイルを使用してAWS設定をロード
 		cfg, err := config.LoadDefaultConfig(context.TODO(),
 			config.WithSharedConfigProfile(profile),
 		)
@@ -67,25 +62,27 @@ func main() {
 			continue
 		}
 
-		// アカウントIDを取得
 		accountID, err := getAccountID(cfg)
 		if err != nil {
 			log.Printf("ERROR: Failed to get Account ID for profile '%s': %v. Skipping...", profile, err)
 			continue
 		}
 
-		// IAMクライアントを作成し、全ユーザーを取得
 		iamClient := iam.NewFromConfig(cfg)
-		paginator := iam.NewListUsersPaginator(iamClient, &iam.ListUsersInput{})
-		for paginator.HasMorePages() {
-			output, err := paginator.NextPage(context.TODO())
+		userPaginator := iam.NewListUsersPaginator(iamClient, &iam.ListUsersInput{})
+		for userPaginator.HasMorePages() {
+			userOutput, err := userPaginator.NextPage(context.TODO())
 			if err != nil {
 				log.Printf("ERROR: Failed to list users for profile '%s': %v", profile, err)
-				break 
+				break
 			}
 
-			// 取得したユーザー情報をCSVに書き込む
-			for _, user := range output.Users {
+			for _, user := range userOutput.Users {
+				groups, err := getGroupsForUser(iamClient, user.UserName)
+				if err != nil {
+					log.Printf("WARNING: Failed to get groups for user '%s' in profile '%s': %v", *user.UserName, profile, err)
+				}
+				
 				row := []string{
 					accountID,
 					profile,
@@ -93,6 +90,7 @@ func main() {
 					aws.ToString(user.UserId),
 					aws.ToString(user.Arn),
 					user.CreateDate.Format(time.RFC3339),
+					strings.Join(groups, ","),
 				}
 				if err := writer.Write(row); err != nil {
 					log.Printf("WARNING: Failed to write row to CSV: %v", err)
@@ -102,10 +100,27 @@ func main() {
 		log.Printf("Finished processing profile: %s", profile)
 	}
 
-	log.Printf("✅ Successfully exported IAM user data to %s", csvFileName)
+	log.Printf("✅ Successfully exported IAM user and group data to %s", csvFileName)
 }
 
-// getAccountID は現在のアカウントIDを取得するヘルパー関数
+func getGroupsForUser(client *iam.Client, userName *string) ([]string, error) {
+	var groups []string
+	groupPaginator := iam.NewListGroupsForUserPaginator(client, &iam.ListGroupsForUserInput{
+		UserName: userName,
+	})
+
+	for groupPaginator.HasMorePages() {
+		output, err := groupPaginator.NextPage(context.TODO())
+		if err != nil {
+			return nil, err
+		}
+		for _, group := range output.Groups {
+			groups = append(groups, *group.GroupName)
+		}
+	}
+	return groups, nil
+}
+
 func getAccountID(cfg aws.Config) (string, error) {
 	stsClient := sts.NewFromConfig(cfg)
 	result, err := stsClient.GetCallerIdentity(context.TODO(), &sts.GetCallerIdentityInput{})
