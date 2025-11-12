@@ -1,0 +1,77 @@
+﻿重要度,ID,検知内容,リソース
+CRITICAL,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/cis-aws-foundations-benchmark/v/1.2.0/2.5/finding/c8c25950-12a0-4a3c-a738-9ab37e5b7550,2.5 AWS Config should be enabled and use the service-linked role for resource recording,"AwsAccount
+AWS::::Account:833066425438"
+CRITICAL,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/Config.1/finding/b3dca4e3-7c83-4ddf-b1a5-aaafc5a14ce0,Config.1 AWS Config should be enabled and use the service-linked role for resource recording,"AwsAccount
+AWS::::Account:833066425438"
+CRITICAL,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/EC2.19/finding/05773475-668c-4454-b8b9-8f329b3d0b57,EC2.19 セキュリティグループは高リスクポートへの無制限アクセスを許可すべきではありません,"AwsEc2SecurityGroup
+arn:aws:ec2:ap-northeast-1:833066425438:security-group/sg-0aef47a6a4ba78ae2 (default)"
+CRITICAL,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/EC2.19/finding/ec85beec-8b84-4727-82cd-31deeae335ae,EC2.19 セキュリティグループは高リスクポートへの無制限アクセスを許可すべきではありません,"AwsEc2SecurityGroup
+arn:aws:ec2:ap-northeast-1:833066425438:security-group/sg-0fe65fe5bedede03a (launch-wizard-2)"
+CRITICAL,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/SSM.7/finding/ad7cc9d3-1238-4778-9c9f-5c94c2dcef53,SSM.7 SSMドキュメントはパブリック共有をブロックする設定を有効にすべきです,"AwsAccount
+AWS::::Account:833066425438"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/cis-aws-foundations-benchmark/v/1.2.0/4.1/finding/c118aba4-4e4b-483c-b8cc-1ff3fb596c52,4.1 セキュリティグループは0.0.0.0/0または::/0からポート22への侵入を許可すべきではありません,"AwsEc2SecurityGroup
+arn:aws:ec2:ap-northeast-1:833066425438:security-group/sg-0fe65fe5bedede03a (launch-wizard-2)"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/cis-aws-foundations-benchmark/v/1.2.0/4.3/finding/62f44837-2e1e-4488-8369-2afd834e9f75,4.3 すべてのVPCのデフォルトセキュリティグループがすべてのトラフィックを制限することを確認してください,"AwsEc2SecurityGroup
+arn:aws:ec2:ap-northeast-1:833066425438:security-group/sg-0aef47a6a4ba78ae2 (default)"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/cis-aws-foundations-benchmark/v/1.2.0/4.3/finding/cebe1ef0-1d63-4971-8b58-6d9dfda52ef6,4.3 すべてのVPCのデフォルトセキュリティグループがすべてのトラフィックを制限することを確認してください,"AwsEc2SecurityGroup
+arn:aws:ec2:ap-northeast-1:833066425438:security-group/sg-03f2303fe0883d7ec (default)"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/cis-aws-foundations-benchmark/v/1.2.0/4.3/finding/d25d6f1a-bebe-42c0-8427-76a348d94f68,4.3 すべてのVPCのデフォルトセキュリティグループがすべてのトラフィックを制限することを確認してください,"AwsEc2SecurityGroup
+arn:aws:ec2:ap-northeast-1:833066425438:security-group/sg-4984b70a (default)"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/EC2.18/finding/97f0b203-80cf-4a0d-bca8-5f1c11bcd2e7,EC2.18 セキュリティグループは承認されたポートに対してのみ無制限の着信トラフィックを許可すべきです,"AwsEc2SecurityGroup
+arn:aws:ec2:ap-northeast-1:833066425438:security-group/sg-0aef47a6a4ba78ae2 (default)"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/EC2.18/finding/cc03e487-e75d-4f59-bc16-f6648db2f79e,EC2.18 セキュリティグループは承認されたポートに対してのみ無制限の着信トラフィックを許可すべきです,"AwsEc2SecurityGroup
+arn:aws:ec2:ap-northeast-1:833066425438:security-group/sg-0fe65fe5bedede03a (launch-wizard-2)"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/EC2.18/finding/deaab70f-042f-40f1-850d-705e380d2b05,EC2.18 セキュリティグループは承認されたポートに対してのみ無制限の着信トラフィックを許可すべきです,"AwsEc2SecurityGroup
+arn:aws:ec2:ap-northeast-1:833066425438:security-group/sg-05602b10ae045c58d (taskbox-redis-prod-sg)"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/EC2.2/finding/1670337c-57f0-4f31-a3ee-93bbcd83b8fd,EC2.2 VPCのデフォルトセキュリティグループはインバウンドまたはアウトバウンドトラフィックを許可すべきではありません,"AwsEc2SecurityGroup
+arn:aws:ec2:ap-northeast-1:833066425438:security-group/sg-03f2303fe0883d7ec (default)"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/EC2.2/finding/7a84fdb3-9d4c-4d96-89ca-254b8c230a7b,EC2.2 VPCのデフォルトセキュリティグループはインバウンドまたはアウトバウンドトラフィックを許可すべきではありません,"AwsEc2SecurityGroup
+arn:aws:ec2:ap-northeast-1:833066425438:security-group/sg-4984b70a (default)"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/EC2.2/finding/cce9656c-dafe-4981-8292-2c3a08ecf271,EC2.2 VPCのデフォルトセキュリティグループはインバウンドまたはアウトバウンドトラフィックを許可すべきではありません,"AwsEc2SecurityGroup
+arn:aws:ec2:ap-northeast-1:833066425438:security-group/sg-0aef47a6a4ba78ae2 (default)"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/EC2.8/finding/03e6d820-9252-4c76-baa8-05bc0469054c,EC2.8 EC2 instances should use Instance Metadata Service Version 2 (IMDSv2),"AwsEc2Instance
+arn:aws:ec2:ap-northeast-1:833066425438:instance/i-0cc7a66b636d0f31c"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/ECR.1/finding/0cbb911a-eff1-4310-b248-d7883da1b787,ECR.1 ECRプライベートリポジトリはイメージスキャンを設定すべきです,"AwsEcrRepository
+arn:aws:ecr:ap-northeast-1:833066425438:repository/taskbox_web_onpremiss_production"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/ECR.1/finding/17a0cf7d-5ed9-4acb-bfb3-dd2afc3783c1,ECR.1 ECRプライベートリポジトリはイメージスキャンを設定すべきです,"AwsEcrRepository
+arn:aws:ecr:ap-northeast-1:833066425438:repository/ruby-test"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/ECR.1/finding/1b70d32a-682d-4afa-b814-1cc17003030e,ECR.1 ECRプライベートリポジトリはイメージスキャンを設定すべきです,"AwsEcrRepository
+arn:aws:ecr:ap-northeast-1:833066425438:repository/ruby_3_3_4"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/ECR.1/finding/7fdb3ad3-0de9-455b-84a2-6f9acf170714,ECR.1 ECRプライベートリポジトリはイメージスキャンを設定すべきです,"AwsEcrRepository
+arn:aws:ecr:ap-northeast-1:833066425438:repository/taskbox_web_onpremiss_development"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/ECR.1/finding/845bacb2-696c-433d-a797-06c1703011a4,ECR.1 ECRプライベートリポジトリはイメージスキャンを設定すべきです,"AwsEcrRepository
+arn:aws:ecr:ap-northeast-1:833066425438:repository/taskbox_web_rails7_development"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/ECR.1/finding/a0b3e98c-eba5-4510-bc6f-451839b78dd0,ECR.1 ECRプライベートリポジトリはイメージスキャンを設定すべきです,"AwsEcrRepository
+arn:aws:ecr:ap-northeast-1:833066425438:repository/ruby_3_2_2"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/ECR.1/finding/b5d2a9ba-8b86-44ba-a976-f6272c388a7b,ECR.1 ECRプライベートリポジトリはイメージスキャンを設定すべきです,"AwsEcrRepository
+arn:aws:ecr:ap-northeast-1:833066425438:repository/taskbox_web_rails7_production"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/ECR.1/finding/f93d18e0-73c5-4545-998f-daefb7ebc64b,ECR.1 ECRプライベートリポジトリはイメージスキャンを設定すべきです,"AwsEcrRepository
+arn:aws:ecr:ap-northeast-1:833066425438:repository/ruby_2_6_3"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/ECS.2/finding/30dc22e3-799e-40fd-9109-62f38fb12a4a,ECS.2 ECS services should not have public IP addresses assigned to them automatically,"AwsEcsService
+arn:aws:ecs:ap-northeast-1:833066425438:service/tbox-r7-prod-production-ECSCluster/bpo-corp-prod-ECSService"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/ECS.2/finding/f82802f2-71de-4045-a856-2c7378432b5c,ECS.2 ECS services should not have public IP addresses assigned to them automatically,"AwsEcsService
+arn:aws:ecs:ap-northeast-1:833066425438:service/bpo-taskbox-prod-production-ECSCluster/bpo-corp-prod-ECSService"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/ECS.5/finding/1c3a86b2-3976-4110-bc15-205ed096fd79,ECS.5 ECS containers should be limited to read-only access to root filesystems,"AwsEcsTaskDefinition
+arn:aws:ecs:ap-northeast-1:833066425438:task-definition/tbox-r7-prod-production-ECSTask:3"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/ECS.5/finding/c9922039-9648-4c7d-a5a7-2b42a82c9299,ECS.5 ECS containers should be limited to read-only access to root filesystems,"AwsEcsTaskDefinition
+arn:aws:ecs:ap-northeast-1:833066425438:task-definition/bpo-taskbox-prod-production-ECSTask:158"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/GuardDuty.11/finding/c4a3f3f1-4111-48ba-8157-7e34aa9b9dfd,GuardDuty.11 GuardDuty Runtime Monitoring should be enabled,"AwsGuardDutyDetector
+arn:aws:guardduty:ap-northeast-1:833066425438:detector/8cc329ebdce628ca0bcabdccea7762ff"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/GuardDuty.6/finding/ffbcfb75-522a-42ce-9501-3dbd791bacc7,GuardDuty.6 GuardDuty Lambda Protection should be enabled,"AwsGuardDutyDetector
+arn:aws:guardduty:ap-northeast-1:833066425438:detector/8cc329ebdce628ca0bcabdccea7762ff"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/GuardDuty.9/finding/fd7e6cfb-fc54-466d-a6bf-973a80c2e375,GuardDuty.9 GuardDuty RDS Protection should be enabled,"AwsGuardDutyDetector
+arn:aws:guardduty:ap-northeast-1:833066425438:detector/8cc329ebdce628ca0bcabdccea7762ff"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/Inspector.1/finding/78393648-da26-4396-b0d6-0da2230ed329,Inspector.1 Amazon Inspector EC2 scanning should be enabled,"AwsAccount
+AWS::::Account:833066425438"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/Inspector.2/finding/b5e1edd5-ab6e-4a11-868c-93f548ae73fa,Inspector.2 Amazon Inspector ECR scanning should be enabled,"AwsAccount
+AWS::::Account:833066425438"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/Inspector.3/finding/0bb327fc-96bd-4822-af75-64f1b2bab895,Inspector.3 Amazon Inspector Lambda code scanning should be enabled,"AwsAccount
+AWS::::Account:833066425438"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/Inspector.4/finding/f270f4a8-d63b-4ac1-bc48-bef7c9db1910,Inspector.4 Amazon Inspector Lambda standard scanning should be enabled,"AwsAccount
+AWS::::Account:833066425438"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/RDS.46/finding/2c0c9210-3c58-4042-a063-2fbbb7347ed6,RDS.46 RDS DB instances should not be deployed in public subnets with routes to internet gateways,"AwsRdsDbInstance
+arn:aws:rds:ap-northeast-1:833066425438:db:bpo-taskbox-prod"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/S3.8/finding/4273bb62-a827-4cd4-97f7-b223aca31aa0,S3.8 S3汎用バケットはパブリックアクセスをブロックすべきです,"AwsS3Bucket
+codepipeline-ap-northeast-1-554108855735"
+HIGH,arn:aws:securityhub:ap-northeast-1:833066425438:subscription/aws-foundational-security-best-practices/v/1.0.0/S3.8/finding/85897837-5c0c-4c27-83a0-bd8d198a5f04,S3.8 S3汎用バケットはパブリックアクセスをブロックすべきです,"AwsS3Bucket
+elasticbeanstalk-ap-northeast-1-833066425438"
